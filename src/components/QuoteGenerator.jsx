@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
+import gsap from 'gsap'
 import './QuoteGenerator.css'
 
 function QuoteGenerator() {
@@ -53,6 +54,15 @@ function QuoteGenerator() {
   const handleInputChange = (field, value) => {
     setQuoteData({ ...quoteData, [field]: value })
   }
+
+  useEffect(() => {
+    // Animate step transitions
+    gsap.fromTo(
+      '.form-step',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+    )
+  }, [currentStep])
 
   const validateStep = (step) => {
     switch (step) {
