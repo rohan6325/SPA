@@ -1,0 +1,28 @@
+/* ScrollSection Component Styles */
+
+.scroll-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-section-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Optional: Add smooth scrolling to the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure smooth transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
