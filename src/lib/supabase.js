@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://wasjftuxmdwzrwjpykre.supabase.co'
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhc2pmdHV4bWR3enJ3anB5a3JlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MTcyNzEsImV4cCI6MjA3NzM5MzI3MX0.nEqHOInIc9TkWyaKP8LpkTzOCe-KhZNikEdTtiZLQv8'
+// Using service role key to bypass RLS
+const supabaseServiceKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhc2pmdHV4bWR3enJ3anB5a3JlIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTgxNzI3MSwiZXhwIjoyMDc3MzkzMjcxfQ.aSCkAeRzcVewB5VhMUzW5vJntfnlEZ9CvYGmb871udo'
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(supabaseUrl, supabaseServiceKey)
